@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Live Tweet Stream</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+</head>
+<body ng-controller="mainController">
+
+    <div class="container" >
+      <!-- <div class="row"> -->
+        <div ng-show="stream.filter" class="mainContainer col-sm-12 col-md-10 col-md-offset-1">
+          <div></div>
+          <div ng-class="{tweet: true, middle: $index==1}" ng-repeat="tweet in stream.tweets track by tweet.id">
+            <tweet />
+          </div>
+          <br /><!--
+          <p>Collection: {{stream.collection.length}}</p>
+          <p>Tweet: {{stream.tweets.length}}</p>
+          <p>Old: {{stream.old.length}}</p> -->
+        </div>
+        <div ng-show="!stream.filter">
+            <div class="initial-page col-sm-12 col-md-6 col-md-offset-3">
+              <div class="row">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="Keywords" ng-model="tmp_filter.track">
+                </div>
+                <div class="col-sm-5"><div class="line-separator"></div></div>
+                <div class="col-sm-2"><div class="orseparator">OR</div></div>
+                <div class="col-sm-5"><div class="line-separator"></div></div>
+                <div class="col-sm-12">
+                    <div id="map-canvas"></div>
+                </div>
+                <div class="col-sm-12">
+                  <button ng-click="setFilter()" type="button" class="btn btn-primary btn-lg btn-block">Start Streaming</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+
+    <script type="text/javascript" src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/services/socket.js"></script>
+    <script type="text/javascript" src="js/services/map.js"></script>
+    <script type="text/javascript" src="js/controllers/mainController.js"></script>
+    <script type="text/javascript" src="js/directives/tweet.js"></script>
+</body>
+</html>

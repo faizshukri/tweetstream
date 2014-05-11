@@ -1,6 +1,5 @@
 angular.module('app')
-
-.factory('socket', function ($rootScope) {
+.factory('socket', ['$rootScope', function ($rootScope) {
     var socket = io.connect('http://localhost:3000');
     return {
         on: function (eventName, callback) {
@@ -22,4 +21,4 @@ angular.module('app')
             })
         }
     };
-});
+}]);

@@ -37,6 +37,18 @@ Installation
     node api/server.js
     ```
 
+    or if you want to run from the background, you can use forever. Install it with `npm install -g forever`. Then fire up with
+
+    ```
+    forever start api/server.js
+    ```
+
+    To stop the server, just use
+
+    ```
+    forever stop api/server.js
+    ```
+
 5. Start streaming from `app/index.html`. :)
 
     ```

@@ -52,11 +52,11 @@ body {
   transition: margin-top 1.0s ease-out, opacity 1.0s ease-in-out;
 }
 .tweet.ng-enter {
-  margin-top: -80px;
+  margin-top: -100px;
   opacity: 0;
 }
 .tweet.ng-enter.ng-enter-active{
-  margin-top: 20px;
+  margin-top: 0px;
   opacity: 1;
 }
 .tweet.ng-leave {

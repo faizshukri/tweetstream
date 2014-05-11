@@ -1,5 +1,5 @@
-var io = require('../socket.io').listen(3000);
-var Twit = require('../twit');
+var io = require('socket.io').listen(3000);
+var Twit = require('twit');
 var crypto = require('crypto');
 var util = require('util');
 

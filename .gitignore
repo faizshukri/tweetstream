@@ -1,5 +1,6 @@
 api/node_modules
 node_modules
+build
 app/bower_components
 app/assets
 api/config/twitter.js
